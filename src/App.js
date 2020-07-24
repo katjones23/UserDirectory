@@ -5,7 +5,7 @@ function App() {
 
 
   return (
-    <div>
+    <div className="container content">
       <header>
         <p>
           Hello world
