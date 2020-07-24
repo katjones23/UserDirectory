@@ -1,0 +1,65 @@
+[
+    {
+        "id": 1,
+        "firstname": "Pollyanna",
+        "lastname": "Lutz",
+        "department": "Sales",
+        "role": "Manager"
+    },
+    {
+        "id": 2,
+        "firstname": "Carl",
+        "lastname": "Chamberlain",
+        "department": "Technology",
+        "role": "Manager"
+    },
+    {
+        "id": 3,
+        "firstname": "Anniyah",
+        "lastname": "Escobar",
+        "department": "HR",
+        "role": "Manager"
+    },
+    {
+        "id": 4,
+        "firstname": "Lily-Anne",
+        "lastname": "Dixon",
+        "department": "Sales",
+        "role": "Account Representative"
+    },
+    {
+        "id": 5,
+        "firstname": "Noel",
+        "lastname": "Welsh",
+        "department": "Technology",
+        "role": "Software Engineer"
+    },
+    {
+        "id": 6,
+        "firstname": "Ella-Grace",
+        "lastname": "Arellano",
+        "department": "HR",
+        "role": "Business Partner"
+    },
+    {
+        "id": 7,
+        "firstname": "Elaina",
+        "lastname": "Hooper",
+        "department": "Sales",
+        "role": "Account Representative"
+    },
+    {
+        "id": 8,
+        "firstname": "Bryce",
+        "lastname": "Lambert",
+        "department": "Technology",
+        "role": "Software Engineer"
+    },
+    {
+        "id": 9,
+        "firstname": "Inaya",
+        "lastname": "Proctor",
+        "department": "HR",
+        "role": "Business Partner"
+    }
+]

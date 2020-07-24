@@ -1,5 +1,6 @@
 import React from "react";
 import "./index.css";
+import employees from "./employees.json"
 import Table from "./components/Table"
 
 function App() {
@@ -10,27 +11,15 @@ function App() {
       <header>
         <h1>Employee Directory</h1>
         <Table>
+        {employees.map(employee => (
           <tr>
-            <td>1</td>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>Sales</td>
-            <td>Account Manager</td>
+            <td>{employee.id}</td>
+            <td>{employee.firstname}</td>
+            <td>{employee.lastname}</td>
+            <td>{employee.department}</td>
+            <td>{employee.role}</td>
           </tr>
-          <tr>
-            <td>2</td>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>Technology</td>
-            <td>Software Engineer</td>
-          </tr>
-          <tr>
-            <td>3</td>
-            <td>Larry</td>
-            <td>Bird</td>
-            <td>HR</td>
-            <td>Manager</td>
-          </tr>
+          ))}
         </Table>
       </header>
     </div>
