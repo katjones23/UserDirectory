@@ -1,7 +1,13 @@
 import React from "react";
 import "./index.css";
 import employees from "./employees.json"
+
 import Table from "./components/Table"
+import TableHeader from "./components/TableHeader"
+import THItem from "./components/THItem"
+import TableBody from "./components/TableBody"
+import TableRow from "./components/TableRow"
+import TBItem from "./components/TBItem"
 
 function App() {
 
@@ -11,15 +17,24 @@ function App() {
       <header>
         <h1>Employee Directory</h1>
         <Table>
-        {employees.map(employee => (
-          <tr>
-            <td>{employee.id}</td>
-            <td>{employee.firstname}</td>
-            <td>{employee.lastname}</td>
-            <td>{employee.department}</td>
-            <td>{employee.role}</td>
-          </tr>
-          ))}
+          <TableHeader>
+            <THItem>ID</THItem>
+            <THItem>First Name</THItem>
+            <THItem>Last Name</THItem>
+            <THItem>Department</THItem>
+            <THItem>Role</THItem>
+          </TableHeader>
+          <TableBody>
+            {employees.map(employee => (
+              <TableRow>
+                <TBItem>{employee.id}</TBItem>
+                <TBItem>{employee.firstname}</TBItem>
+                <TBItem>{employee.lastname}</TBItem>
+                <TBItem>{employee.department}</TBItem>
+                <TBItem>{employee.role}</TBItem>
+              </TableRow>
+            ))}
+          </TableBody>
         </Table>
       </header>
     </div>
