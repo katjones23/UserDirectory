@@ -1,5 +1,4 @@
 import React from "react";
-import "./style.css";
 
 function Table(props) {
     return <table class="table">
