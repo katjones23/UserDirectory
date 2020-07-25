@@ -8,6 +8,7 @@ import THItem from "./components/THItem"
 import TableBody from "./components/TableBody"
 import TableRow from "./components/TableRow"
 import TBItem from "./components/TBItem"
+import DropdownBtn from "./components/DropdownBtn"
 
 function App() {
 
@@ -54,6 +55,19 @@ function App() {
     setUpdateView(updateView + 1);
   }
 
+  function handleFilter(event) {
+    const button = event.target.dataset.text
+    console.log(button)
+    // const filteredEmp = employees
+
+    // if (button === "filter") {
+
+    // } else {
+    //   setEmployees(employees);
+    //   setUpdateView(updateView + 1);
+    // }
+  }
+
 
   return (
     <div className="container content">
@@ -64,8 +78,8 @@ function App() {
       <p>Click on column name to sort</p>
 
       <div className="text-center">
-        <button type="button" className="btn btn-info">Filter by Department</button>
-        <button type="button" className="btn btn-danger">Reset</button>
+        <DropdownBtn handleFilter={handleFilter}></DropdownBtn>
+        <button onClick={handleFilter} data-text="reset" type="button" className="btn btn-danger">Reset</button>
       </div>
 
       <Table>
