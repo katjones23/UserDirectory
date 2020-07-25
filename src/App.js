@@ -17,7 +17,7 @@ function App() {
 
   function handleOnClick(event) {
     const column = event.target.dataset.text
-    const sortedEmp = employees
+    let sortedEmp = employees
 
     function compare(item1, item2) {
       if (item1 < item2) {
@@ -57,15 +57,29 @@ function App() {
 
   function handleFilter(event) {
     const button = event.target.dataset.text
-    console.log(button)
-    // const filteredEmp = employees
+    let filteredEmps = employees
 
-    // if (button === "filter") {
+    switch (button) {
+      case "sales":
+        filteredEmps = employeeList
+        filteredEmps = filteredEmps.filter(employee => employee.department === "Sales");
+        break;
+      case "technology":
+        filteredEmps = employeeList
+        filteredEmps = filteredEmps.filter(employee => employee.department === "Technology");
+        break;
+      case "hr":
+        filteredEmps = employeeList
+        filteredEmps = filteredEmps.filter(employee => employee.department === "HR");
+        break;
+      case "reset":
+        filteredEmps = employeeList
+        break;
+      default:
+        filteredEmps = employeeList
+    };
 
-    // } else {
-    //   setEmployees(employees);
-    //   setUpdateView(updateView + 1);
-    // }
+    setEmployees(filteredEmps);
   }
 
 
