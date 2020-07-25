@@ -9,10 +9,12 @@ import TableBody from "./components/TableBody"
 import TableRow from "./components/TableRow"
 import TBItem from "./components/TBItem"
 import DropdownBtn from "./components/DropdownBtn"
+import Search from "./components/Search"
 
 function App() {
 
   const [employees, setEmployees] = useState(employeeList)
+  const [searchState, setSearch] = useState("")
   const [updateView, setUpdateView] = useState(0);
 
   function handleOnClick(event) {
@@ -82,6 +84,18 @@ function App() {
     setEmployees(filteredEmps);
   }
 
+  function handleChange(event) {
+    const searchText = event.target.value;
+    setSearch(searchText)
+    console.log(searchState)
+
+    if (searchState === "" || searchState.length < 2) {
+      setEmployees(employeeList)
+    } else {
+      setEmployees(employees.filter(employee => employee.firstname.toLowerCase().includes(searchState)))
+    }
+  }
+
 
   return (
     <div className="container content">
@@ -94,6 +108,10 @@ function App() {
       <div className="text-center">
         <DropdownBtn handleFilter={handleFilter}></DropdownBtn>
         <button onClick={handleFilter} data-text="reset" type="button" className="btn btn-danger">Reset</button>
+      </div>
+
+      <div className="text-center">
+        <Search handleChange={handleChange}></Search>
       </div>
 
       <Table>
