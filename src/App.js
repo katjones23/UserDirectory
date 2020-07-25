@@ -86,13 +86,17 @@ function App() {
 
   function handleChange(event) {
     const searchText = event.target.value;
-    setSearch(searchText)
-    console.log(searchState)
+    
+    setSearch(searchText.toLowerCase())
 
     if (searchState === "" || searchState.length < 2) {
       setEmployees(employeeList)
     } else {
-      setEmployees(employees.filter(employee => employee.firstname.toLowerCase().includes(searchState)))
+      setEmployees(employees.filter(function(employee) {
+        let fullname = employee.firstname + " " + employee.lastname
+
+        return fullname.toLowerCase().includes(searchState)
+      }))
     }
   }
 
